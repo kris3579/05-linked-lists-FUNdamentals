@@ -46,17 +46,11 @@ module.exports = class LinkedList {
     while (currentNode.next) { // O(n)
       if (currentNode.next === offset) { // O(1)
         currentNode.next = currentNode.next.next; // O(1)
+        return currentNode.next;
       }
       currentNode = currentNode.next; // O(1)
     }
-    console.log(this);
-    return this; // O(1)
+    return null; // O(1)
   }
 };
 
-const linkedListTest = new LinkedList();
-console.log('lskjflaskdjf', linkedListTest);
-
-for (let i = 0; i < 5; i++) {
-  linkedListTest.insertAtHead(i);
-}
